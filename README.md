@@ -4,6 +4,12 @@ kacl
 Command line utility for maintaining a changelog in the [Keep a
 Changelog](http://keepachangelog.com/en/1.0.0/) format
 
+Install
+-------
+
+```
+go install -v github.com/nicwest/kacl
+```
 
 Usage
 -----
