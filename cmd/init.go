@@ -11,10 +11,11 @@ import (
 )
 
 type initCmdConfig struct {
-	ProjectPath string
-	InitialTag  string
+	ProjectURL string
+	InitialTag string
 }
 
+// V1Template is the default keep a change log v1.0.0 template
 const V1Template string = `# Changelog
 All notable changes to this project will be documented in this file.
 
@@ -26,7 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - This CHANGELOG file!
 
 
-[Unreleased]: https://github.com/{{ .ProjectPath }}/compare/{{ .InitialTag }}...HEAD `
+[Unreleased]: {{ .ProjectURL }}/compare/{{ .InitialTag }}...HEAD `
 
 // initCmd represents the init command
 var initCmd = &cobra.Command{
@@ -47,7 +48,7 @@ http://keepachangelog.com/en/1.0.0/ format.`,
 
 		var cfg initCmdConfig
 
-		prompt.For("Project path", &cfg.ProjectPath)
+		prompt.For("Project URL", &cfg.ProjectURL)
 		prompt.ForWithDefault("Initial commit", "0.0.1", &cfg.InitialTag)
 
 		t := template.Must(template.New("version").Parse(V1Template))

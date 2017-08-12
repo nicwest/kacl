@@ -37,7 +37,6 @@ a new change with the given tag.`,
 		changes.WriteTo(rest)
 		rest.WriteString("\n")
 		rest.WriteString(contents.Rest)
-		rest.WriteString("\n")
 		contents.Rest = rest.String()
 
 		if len(contents.Refs) > 0 {
