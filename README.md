@@ -1,22 +1,19 @@
-kacl
-====
+# kacl
 
 Command line utility for maintaining a changelog in the [Keep a
 Changelog](http://keepachangelog.com/en/1.0.0/) format
 
-Install
--------
+## Install
 
 ```
 go install -v github.com/nicwest/kacl
 ```
 
-Usage
------
+## Usage
 
 ```
 $ kacl
-Command line utility for maintaining a changelog in the 
+Command line utility for maintaining a changelog in the
 Keep a Changelog format
 
 http://keepachangelog.com/en/1.0.0/
@@ -30,6 +27,7 @@ Available Commands:
   deprecated  Add a change to the list of Unreleased deprecations
   fixed       Add a change to the list of Unreleased fixes
   help        Help about any command
+  info        List information in a change log
   init        Initialize a CHANGELOG.md file
   release     Create a new release
   removed     Add a change to the list of Unreleased removals
