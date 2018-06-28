@@ -85,6 +85,51 @@ type Contents struct {
 	Refs       []Reference
 }
 
+func (c Contents) ChangeLogInfo(version string) string {
+	s := ""
+	for _, element := range c.Changes {
+		if strings.Compare(element.Tag, version) == 0 {
+			if element.Added != "" {
+				s += fmt.Sprintln("Added")
+				s += fmt.Sprintln(element.Added)
+				s += fmt.Sprintln()
+			}
+
+			if element.Changed != "" {
+				s += fmt.Sprintln("Changed")
+				s += fmt.Sprintln(element.Changed)
+				s += fmt.Sprintln()
+			}
+
+			if element.Deprecated != "" {
+				s += fmt.Sprintln("Deprecated")
+				s += fmt.Sprintln(element.Deprecated)
+				s += fmt.Sprintln()
+			}
+
+			if element.Fixed != "" {
+				s += fmt.Sprintln("Fixed")
+				s += fmt.Sprintln(element.Fixed)
+				s += fmt.Sprintln()
+			}
+
+			if element.Removed != "" {
+				fmt.Sprintln("Removed")
+				fmt.Sprintln(element.Removed)
+				fmt.Sprintln()
+			}
+
+			if element.Security != "" {
+				s += fmt.Sprintln("Security")
+				s += fmt.Sprintln(element.Security)
+				s += fmt.Sprintln()
+			}
+			return s
+		}
+	}
+	return "Versin Not Found"
+}
+
 var unreleasedRe = regexp.MustCompile(`(?i)^##\s*\[?(unreleased)\]?\s*$`)
 var sectionRe = regexp.MustCompile(`(?i)^###\s(added|changed|deprecated|fixed|removed|security)\s*$`)
 var changeRe = regexp.MustCompile(`(?i)^##\s*\[?([0-9.]+)\]?\s*-?\s*([0-9\-]+)?\s*$`)

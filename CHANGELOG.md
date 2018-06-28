@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - List information using info
+- Mail Template Command
 
 ## [0.0.1] - 2017-08-12
 
