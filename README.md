@@ -29,6 +29,7 @@ Available Commands:
   help        Help about any command
   info        List information in a change log
   init        Initialize a CHANGELOG.md file
+  mail        Create a email from changelog
   release     Create a new release
   removed     Add a change to the list of Unreleased removals
   security    Add a change to the list of Unreleased security updates
@@ -39,3 +40,7 @@ Flags:
 
 Use "kacl [command] --help" for more information about a command.
 ```
+
+### Email Template
+
+[![asciicast](https://asciinema.org/a/189125.png)](https://asciinema.org/a/189125)
