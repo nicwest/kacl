@@ -56,11 +56,11 @@ func generateEmail(changeLogInfo string) string {
 	var VersionNumber string
 	var ReleaseComponent string
 
-	prompt.For("Name: ", &Name)
-	prompt.For("Release Component: ", &ReleaseComponent)
-	prompt.For("Release Date (yyyy/MM/dd HH:mm): ", &ReleaseDate)
-	prompt.For("Version Number: ", &VersionNumber)
-	prompt.For("Build Number: ", &BuildNumber)
+	prompt.For("Name", &Name)
+	prompt.For("Release Component", &ReleaseComponent)
+	prompt.For("Release Date (yyyy/MM/dd HH:mm)", &ReleaseDate)
+	prompt.For("Version Number", &VersionNumber)
+	prompt.For("Build Number", &BuildNumber)
 
 	emailTmpl := `
 Hi All,
