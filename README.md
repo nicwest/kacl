@@ -33,6 +33,7 @@ Available Commands:
   release     Create a new release
   removed     Add a change to the list of Unreleased removals
   security    Add a change to the list of Unreleased security updates
+  versions    List all versions in a changelog
 
 Flags:
       --config string   config file (default is $HOME/.kacl.yaml)

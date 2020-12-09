@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - List information using info
 - Mail Template Command
+- `versions` Command
 
 ## [0.0.1] - 2017-08-12
 

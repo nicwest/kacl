@@ -85,6 +85,14 @@ type Contents struct {
 	Refs       []Reference
 }
 
+func (c Contents) ChangeLogVersions() string {
+	s := ""
+	for _, element := range c.Changes {
+		s += fmt.Sprintln(element.Tag)
+	}
+	return s
+}
+
 func (c Contents) ChangeLogInfo(version string) string {
 	s := ""
 	for _, element := range c.Changes {
