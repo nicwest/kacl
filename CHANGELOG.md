@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - List information using info
 - Mail Template Command
+- Support for semver suffixes (`X.Y.Z-[prerelease]+[build_number]`)
 
 ## [0.0.1] - 2017-08-12
 

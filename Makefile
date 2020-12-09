@@ -5,7 +5,7 @@ TAG=latest
 setup:
 	go get -v ./...
 	go get github.com/golang/lint/golint
-	go get github.com/fzipp/gocyclo 
+	go get github.com/fzipp/gocyclo
 
 test:
 	go test -v ./...
@@ -16,6 +16,9 @@ test:
 
 clean:
 	rm kacl-*.tar.gz
+
+build:
+	go build -o kacl main.go
 
 releases:
 	GOARCH=amd64 GOOS=linux CGO_ENABLED=0 go build -o kacl main.go    && tar czvf kacl-$(TAG)-linux_amd64.tar.gz kacl
