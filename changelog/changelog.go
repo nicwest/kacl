@@ -127,7 +127,7 @@ func (c Contents) ChangeLogInfo(version string) string {
 			return s
 		}
 	}
-	return "Versin Not Found"
+	return "Version Not Found"
 }
 
 var unreleasedRe = regexp.MustCompile(`(?i)^##\s*\[?(unreleased)\]?\s*$`)
