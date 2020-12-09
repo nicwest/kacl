@@ -132,7 +132,7 @@ func (c Contents) ChangeLogInfo(version string) string {
 
 var unreleasedRe = regexp.MustCompile(`(?i)^##\s*\[?(unreleased)\]?\s*$`)
 var sectionRe = regexp.MustCompile(`(?i)^###\s(added|changed|deprecated|fixed|removed|security)\s*$`)
-var changeRe = regexp.MustCompile(`(?i)^##\s*\[?([0-9.]+)\]?\s*-?\s*([0-9\-]+)?\s*$`)
+var changeRe = regexp.MustCompile(`(?i)^##\s*\[?([0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z.0-9]+)?(?:\+[0-9]+)?)\]?\s*-?\s*([0-9\-]+)?\s*$`)
 var changeRefRe = regexp.MustCompile(`(?i)^\[([^\]]+)\]:\s*(.*)/compare/(.*)\.\.\.(.*)$`)
 var refRe = regexp.MustCompile(`(?i)^\[([^\]]+)\]:\s*(.*)$`)
 
