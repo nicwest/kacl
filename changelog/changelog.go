@@ -114,9 +114,9 @@ func (c Contents) ChangeLogInfo(version string) string {
 			}
 
 			if element.Removed != "" {
-				fmt.Sprintln("Removed")
-				fmt.Sprintln(element.Removed)
-				fmt.Sprintln()
+				s += fmt.Sprintln("Removed")
+				s += fmt.Sprintln(element.Removed)
+				s += fmt.Sprintln()
 			}
 
 			if element.Security != "" {
