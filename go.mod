@@ -1,4 +1,4 @@
-module github.com/nicwest/kacl
+module github.com/xurei/kacl
 
 go 1.15
 
