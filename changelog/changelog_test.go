@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - some old stuff
 - bad code
 
-## [0.3.0] - 2016-12-03
+## [0.3.0-rc1.1+42] - 2016-12-03
 ### Added
 - This awesome feature
 - More pewpew.
@@ -44,8 +44,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - hard coded passwords have been removed
 - stack overflow issue solved!
 
-[Unreleased]: https://github.com/myuser/myproject/compare/v0.3.0...HEAD
-[0.3.0]: https://github.com/myuser/myproject/compare/v0.2.0...v0.3.0
+[Unreleased]: https://github.com/myuser/myproject/compare/v0.3.0-rc1.1+42...HEAD
+[0.3.0-rc1.1+42]: https://github.com/myuser/myproject/compare/v0.2.0...v0.3.0-rc1.1+42
 [0.2.0]: https://github.com/myuser/myproject/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/myuser/myproject/compare/v0.0.8...v0.1.0
 `
@@ -68,7 +68,7 @@ func TestParse_has_rest(t *testing.T) {
 	buf := bytes.NewBufferString(testLog1)
 	contents, err := Parse(buf)
 	assert.Nil(t, err)
-	rest := `## [0.3.0] - 2016-12-03
+	rest := `## [0.3.0-rc1.1+42] - 2016-12-03
 ### Added
 - This awesome feature
 - More pewpew.
@@ -106,7 +106,7 @@ func TestParse_has_changes(t *testing.T) {
 - some issue`,
 		},
 		&Changes{
-			Tag: "0.3.0",
+			Tag: "0.3.0-rc1.1+42",
 			Added: `- This awesome feature
 - More pewpew.`,
 			Time: time.Date(2016, 12, 3, 0, 0, 0, 0, time.UTC),
@@ -138,16 +138,16 @@ func TestParse_has_references(t *testing.T) {
 	expected := []Reference{
 		{
 			Tag:     "Unreleased",
-			Raw:     "[Unreleased]: https://github.com/myuser/myproject/compare/v0.3.0...HEAD",
-			From:    "v0.3.0",
+			Raw:     "[Unreleased]: https://github.com/myuser/myproject/compare/v0.3.0-rc1.1+42...HEAD",
+			From:    "v0.3.0-rc1.1+42",
 			To:      "HEAD",
 			BaseURL: "https://github.com/myuser/myproject",
 		},
 		{
-			Tag:     "0.3.0",
-			Raw:     "[0.3.0]: https://github.com/myuser/myproject/compare/v0.2.0...v0.3.0",
+			Tag:     "0.3.0-rc1.1+42",
+			Raw:     "[0.3.0-rc1.1+42]: https://github.com/myuser/myproject/compare/v0.2.0...v0.3.0-rc1.1+42",
 			From:    "v0.2.0",
-			To:      "v0.3.0",
+			To:      "v0.3.0-rc1.1+42",
 			BaseURL: "https://github.com/myuser/myproject",
 		},
 		{
